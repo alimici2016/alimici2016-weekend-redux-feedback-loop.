@@ -1,0 +1,8 @@
+[]Need to hook multiple pages to the platform this will include Routes
+[]The 4 parts will include questions
+[]There will be some sort of a route sender that sends the user to the next page when they answer
+    []This will be a next button
+[]There will be some sort of reducer that stores that information until the post submit
+[]Need to disable the button if the input is left blank
+[]The last step includes a page where all the inputs are displayed with a submit button which is a post route
+[]When the submission is posted to the server they should get back some sort of prompt that gives them a thank you
