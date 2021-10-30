@@ -24,6 +24,12 @@ function FeedbackForm() {
 
         setInput('')
     };
+    //This handleSubmit function should be set to default if no event happens
+    //Then dispatch to the reducer occurs sending the input as the payload
+
+    //Below we have and onChange where we use to store whatever is input(for lack of a better term)
+    //Then said input is the value which is sent to the above dispatch
+    //Button when click will fire off this entire thing as well as sending us to the next page
 
     return (
         <>
