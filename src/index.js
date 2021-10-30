@@ -8,20 +8,20 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import logger from 'redux-logger';
 
 let feedbackObject = {
-    feelings: "",
-    understanding: "",
-    support: "",
-    comments:""
+    feelings:'',
+    understanding:'',
+    support:'',
+    comments:''
 }
 
     const feedbackReducer = (state = feedbackObject, action) => {
-    if (action.type === "ADD_ANSWER") {
+    if (action.type === "ANSWER_ONE") {
         return {...state, feelings: action.payload}
-    } else if (action.type === "ADD_ANSWER_TWO"){
+    } else if (action.type === "ANSWER_TWO"){
         return {...state, understanding: action.payload}
-    }else if(action.type === "ADD_ANSWER_THREE"){
+    }else if(action.type === "ANSWER_THREE"){
         return {...state,  support: action.payload}
-    }else if(action.type === "ADD_ANSWER_FOUR"){
+    }else if(action.type === "ANSWER_FOUR"){
         return {...state, comments: action.payload}
     }
 

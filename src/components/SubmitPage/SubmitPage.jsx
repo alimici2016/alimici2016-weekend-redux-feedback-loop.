@@ -26,10 +26,11 @@ function SubmitPage() {
     console.log(feedback.feelings);
     return(
         <>
-        <p>{feedback.feelings}</p>
-        {/* <p>{answerArray.understanding}</p>
-        <p>{answerArray.support}</p>
-        <p>{answerArray.comments}</p> */}
+        <h2>Review Your Feedback</h2>
+        <h5>Feeling: {feedback.feelings}</h5>
+       <h5>Understanding: {feedback.understanding}</h5>
+       <h5>Support: {feedback.support}</h5>
+       <h5>Comments: {feedback.comments}</h5>
         <button onClick={handleSubmit}> Submit</button>
         </>
     )

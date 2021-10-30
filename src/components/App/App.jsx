@@ -35,11 +35,13 @@ function App() {
           <FeedbackFormFour />
 
          </Route>
-        <Route path='/submit'>
+         <Route path='/submit'>
         <SubmitPage />
         </Route> 
-
+        
       </Router>
+      
+
     </div>
   );
 }
