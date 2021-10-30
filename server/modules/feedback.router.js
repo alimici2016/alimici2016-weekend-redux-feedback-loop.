@@ -5,7 +5,7 @@ const pool = require('../modules/pool');
 
 router.post('/', (req, res) => {
     const newAnswer = req.body
-    const sqlText = 'INSERT INTO prime_feedback VALUES $(1, $2, $3, $4)'
+    const sqlText = 'INSERT INTO feedback VALUES $(1, $2, $3, $4)'
 
     pool.query(sqlText, [newAnswer])
     .then((result) => {

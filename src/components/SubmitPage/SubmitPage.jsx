@@ -7,6 +7,9 @@ function SubmitPage() {
     const support = useSelector((store) => store.answerThreeReducer)
     const comments = useSelector((store) => store.answerFourReducer)
 
+
+    
+
     // const answerArray = [feeling, understanding, support, comments]
 
 

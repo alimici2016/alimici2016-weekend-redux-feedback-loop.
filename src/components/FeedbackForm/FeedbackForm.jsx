@@ -1,52 +1,41 @@
-import {useState, useEffect} from 'react'
-import {useDispatch} from 'react-redux'
+import { useState, } from 'react'
+import { useDispatch } from 'react-redux'
 
-function FeedbackForm () {
-
-    // const renderQuestion = () => {
-    // }
+function FeedbackForm() {
 
     const dispatch = useDispatch();
 
     const [input, setInput] = useState('')
 
-    const handleInputChange = (event) => {
-        // console.log('clicked')
-        setInput({
-            ...input,
-            answer: event.target.value,
-        })
-    }
-
-    const addInput = () => {
+    const handleSubmit = (event) => {
         event.preventDefault();
+        // console.log('clicked')
+        // setInput({
+        //     ...input,
+        //     answer: event.target.value,
+        // })
 
         dispatch({
-            action: "ANSWER_ONE",
-            payload: input
+           type: "ANSWER_ONE",
+            payload: input.answer
         })
 
         setInput('')
     };
 
-    // useEffect(()=>{
-    //     renderQuestion();
-    // }, [])
+    return (
+        <>
+            <h1>How well are you understanding the content?</h1>
 
-
-    return(
-    <>
-        <h1>How are you feeling today?</h1>
-
-        <form onSubmit={(event) => addInput(event)}>
-        <input onChange={handleInputChange}
-        type="text"
-        // value=""
-        placeholder="answer"
-        />
-        
-        </form>
-
+            <form>
+                <input onChange={(event) => setInput(event.target.value)}
+                    type="text"
+                    value={input.answer}
+                    placeholder="answer"
+                />
+            </form>
+            <button onClick={handleSubmit}>NEXT
+            </button>
         </>
     )
 };

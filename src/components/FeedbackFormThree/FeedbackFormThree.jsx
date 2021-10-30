@@ -1,43 +1,45 @@
-import {useState} from 'react'
-import {useDispatch} from 'react-redux'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
-function FeedbackFormThree () {
+function FeedbackFormThree() {
 
     const dispatch = useDispatch();
 
     const [input, setInput] = useState('')
 
-    const handleInputChange = (event) => {
-        // console.log('clicked')
-        setInput({
-            ...input,
-            answer: event.target.value,
-        })
-    }
+    // const handleInputChange = (event) => {
+    //     // console.log('clicked')
+    //     setInput({
+    //         ...input,
+    //         answer: event.target.value,
+    //     })
+    // }
 
-    const addInput = () => {
+    const handleSubmit = (event) => {
         event.preventDefault();
 
         dispatch({
-            action: "ANSWER_THREE",
-            payload: input
+           type: "ANSWER_THREE",
+            payload: input.answer
         })
 
         setInput('')
     };
 
-    return(
+    return (
         <>
-        <h1>How well are you being supported?</h1>
-        <form onSubmit={(event) => addInput(event)}>
-        <input onChange={handleInputChange}
-        type="text"
-        // value={input}
-        placeholder="answer"
-        />
-        </form>
+            <h1>How well are you understanding the content?</h1>
+
+            <form>
+                <input onChange={(event) => setInput(event.target.value)}
+                    type="text"
+                    value={input.answer}
+                    placeholder="answer"
+                />
+            </form>
+            <button onClick={handleSubmit}>NEXT
+            </button>
         </>
     )
-
 };
 export default FeedbackFormThree;

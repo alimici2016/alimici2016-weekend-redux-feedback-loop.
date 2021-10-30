@@ -7,42 +7,64 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import logger from 'redux-logger';
 
+let feedbackReducer = {
+    feelings: "",
+    understanding: "",
+    support: "",
+    comments:""
+}
 
-const answerReducer = (state = [], action) => {
+const feedbackReducer = (state = feedbackReducer, action) => {
     if (action.type === "ADD_ANSWER") {
         return [...state, action.payload]
-    }
-    return state;
-};
-
-const answerTwoReducer = (state = [], action) => {
-    if (action.type === "ADD_ANSWER_TWO") {
+    } else if (action.type === "ADD_ANSWER_TWO"){
+        return [...state, action.payload]
+    }else if(action.type === "ADD_ANSWER_THREE"){
+        return [...state, action.payload]
+    }else if(action.type === "ADD_ANSWER_FOUR"){
         return [...state, action.payload]
     }
-    return state;
-};
 
-const answerThreeReducer = (state = [], action) => {
-    if (action.type === "ADD_ANSWER_THREE") {
-        return [...state, action.payload]
-    }
     return state;
-};
+};//should set this object "feedbackReducer to my inputs"
 
 
-const answerFourReducer = (state = [], action) => {
-    if (action.type === "ADD_ANSWER_FOUR") {
-        return [...state, action.payload]
-    }
-    return state;
-};
+// const answerReducer = (state = [], action) => {
+//     if (action.type === "ADD_ANSWER") {
+//         return [...state, action.payload]
+//     }
+//     return state;
+// };
+
+// const answerTwoReducer = (state = [], action) => {
+//     if (action.type === "ADD_ANSWER_TWO") {
+//         return [...state, action.payload]
+//     }
+//     return state;
+// };
+
+// const answerThreeReducer = (state = [], action) => {
+//     if (action.type === "ADD_ANSWER_THREE") {
+//         return [...state, action.payload]
+//     }
+//     return state;
+// };
+
+
+// const answerFourReducer = (state = [], action) => {
+//     if (action.type === "ADD_ANSWER_FOUR") {
+//         return [...state, action.payload]
+//     }
+//     return state;
+// };
 
 const storeInstance = createStore(
     combineReducers({
-        answerReducer,
-        answerTwoReducer,
-        answerThreeReducer,
-        answerFourReducer
+        feedbackReducer
+        // answerReducer,
+        // answerTwoReducer,
+        // answerThreeReducer,
+        // answerFourReducer
     }),
     applyMiddleware(logger)
 );

@@ -19,40 +19,20 @@ function App() {
 
         <Route path='/' exact>
           <FeedbackForm />
-          <nav>
-            <button>
-              <Link to="/two">NEXT</Link>
-            </button>
-          </nav>
 
         </Route>
 
         <Route path='/two'>
           <FeedbackFormTwo />
-          <nav>
-            <button>
-              <Link to="/three">NEXT</Link>
-            </button>
-          </nav>
         </Route>
 
         <Route path='/three'>
           <FeedbackFormThree />
-          <nav>
-            <button>
-              <Link to="/four">NEXT</Link>
-            </button>
-          </nav>
 
         </Route>
 
         <Route path='/four'>
           <FeedbackFormFour />
-          <nav>
-            <button>
-              <Link to="/submit">NEXT</Link>
-            </button>
-          </nav>
 
          </Route>
         <Route path='/submit'>
