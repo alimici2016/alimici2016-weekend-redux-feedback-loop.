@@ -1,7 +1,11 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 
 function FeedbackForm () {
+
+    // const renderQuestion = () => {
+    // }
+
 
     const dispatch = useDispatch();
 
@@ -26,13 +30,25 @@ function FeedbackForm () {
         setInput('')
     };
 
+    // useEffect(()=>{
+    //     renderQuestion();
+    // }, [])
+
+
     return(
-        <form onSubmit={(event) => addInput(event)}
-        input onChange={handleInputChange}
+    <>
+        <h1>How are you feeling today?</h1>
+
+        <form onSubmit={(event) => addInput(event)}>
+        <input onChange={handleInputChange}
         type="text"
         value={input}
         placeholder="answer"
         />
+        
+        </form>
+
+        </>
     )
 };
 

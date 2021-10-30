@@ -27,12 +27,16 @@ function FeedbackFormFour () {
     };
 
     return(
-        <form onSubmit={(event) => addInput(event)}
-        input onChange={handleInputChange}
+        <>
+        <h1>Any comments you want to leave?</h1>
+        <form onSubmit={(event) => addInput(event)}>
+        <input onChange={handleInputChange}
         type="text"
         value={input}
         placeholder="answer"
         />
+        </form>
+        </>
     )
 };
 

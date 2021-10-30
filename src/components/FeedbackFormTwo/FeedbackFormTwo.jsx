@@ -27,12 +27,17 @@ function FeedbackFormTwo () {
     };
 
     return(
-        <form onSubmit={(event) => addInput(event)}
-        input onChange={handleInputChange}
+        <>
+        <h1>How well are you understanding the content?</h1>
+
+        <form onSubmit={(event) => addInput(event)}>
+        <input onChange={handleInputChange}
         type="text"
         value={input}
         placeholder="answer"
         />
+        </form>
+        </>
     )
 };
 

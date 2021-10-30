@@ -27,13 +27,17 @@ function FeedbackFormThree () {
     };
 
     return(
-        <form onSubmit={(event) => addInput(event)}
-        input onChange={handleInputChange}
+        <>
+        <h1>How well are you being supported?</h1>
+        <form onSubmit={(event) => addInput(event)}>
+        <input onChange={handleInputChange}
         type="text"
         value={input}
         placeholder="answer"
         />
+        </form>
+        </>
     )
-};
 
+};
 export default FeedbackFormThree;

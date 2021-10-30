@@ -5,25 +5,25 @@ import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import logger from "react-logger";
+import logger from 'redux-logger';
 
 
 const answerReducer = (state = [], action) => {
-    if (action.type === "ADD_ANSWER"){
+    if (action.type === "ADD_ANSWER") {
         return [...state, action.payload]
     }
     return state;
 };
 
 const answerTwoReducer = (state = [], action) => {
-    if (action.type === "ADD_ANSWER_TWO"){
+    if (action.type === "ADD_ANSWER_TWO") {
         return [...state, action.payload]
     }
     return state;
 };
 
 const answerThreeReducer = (state = [], action) => {
-    if (action.type === "ADD_ANSWER_THREE"){
+    if (action.type === "ADD_ANSWER_THREE") {
         return [...state, action.payload]
     }
     return state;
@@ -31,7 +31,7 @@ const answerThreeReducer = (state = [], action) => {
 
 
 const answerFourReducer = (state = [], action) => {
-    if (action.type === "ADD_ANSWER_FOUR"){
+    if (action.type === "ADD_ANSWER_FOUR") {
         return [...state, action.payload]
     }
     return state;
@@ -49,9 +49,9 @@ const storeInstance = createStore(
 
 
 ReactDOM.render(
-<Provider store={storeInstance}>
-<App /> 
-</Provider>,
-document.getElementById('root')
+    <Provider store={storeInstance}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
 );
 registerServiceWorker();

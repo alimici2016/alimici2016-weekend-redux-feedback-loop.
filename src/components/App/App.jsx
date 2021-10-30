@@ -1,36 +1,56 @@
 import React from 'react';
-import axios from 'axios';
-import { useEffect } from 'react';
-import {useDispatch} from 'react-redux'
 import './App.css';
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
+import FeedbackFormTwo from '../FeedbackFormTwo/FeedbackFormTwo';
+import Header from '../Header/Header';
+import { Route, HashRouter as Router, Link} from 'react-router-dom';
+import FeedbackFormThree from '../FeedbackFormThree/FeedbackFormThree';
+import FeedbackFormFour from '../FeedbackFormFour/FeedbackFormFour';
 
 
 function App() {
 
-  // const fetchInput = () => {
-  //   axios.get({
-  //     method: 'GET',
-  //     url: '/'
-  //   }).then((response) => {
-  //     console.log(response)
-  //     // setInput(response.data)
-  //   }).catch((err) => {
-  //     alert(err)
-  //   })
-  // }
-
-  // useEffect(() => {
-  //   fetchInput();
-  // }, [])
-
   return (
     <div className='App'>
-      <header className='App-header'>
-        <h1 className='App-title'>Feedback!</h1>
-        <h4>Don't forget it!</h4>
-        
-      </header>
+
+      <Router>
+        <Header />
+
+        <Route path='/' exact>
+          <FeedbackForm />
+          <nav>
+            <button>
+              <Link to="/two">NEXT</Link>
+            </button>
+          </nav>
+
+        </Route>
+
+        <Route path='/two'>
+          <FeedbackFormTwo />
+          <nav>
+            <button>
+              <Link to="/three">NEXT</Link>
+            </button>
+          </nav>
+        </Route>
+
+        <Route path='/three'>
+          <FeedbackFormThree />
+          <nav>
+            <button>
+              <Link to="/four">NEXT</Link>
+            </button>
+          </nav>
+
+        </Route>
+
+        <Route path='/four'>
+          <FeedbackFormFour />
+
+        </Route>
+
+      </Router>
     </div>
   );
 }
