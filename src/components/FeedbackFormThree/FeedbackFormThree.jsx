@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom';
 
 function FeedbackFormThree() {
 
@@ -20,7 +21,7 @@ function FeedbackFormThree() {
 
         dispatch({
            type: "ANSWER_THREE",
-            payload: input.answer
+            payload: input
         })
 
         setInput('')
@@ -28,16 +29,17 @@ function FeedbackFormThree() {
 
     return (
         <>
-            <h1>How well are you understanding the content?</h1>
+            <h1>How well are you being supported?</h1>
 
             <form>
                 <input onChange={(event) => setInput(event.target.value)}
                     type="text"
-                    value={input.answer}
+                    value={input}
                     placeholder="answer"
                 />
             </form>
-            <button onClick={handleSubmit}>NEXT
+            <button onClick={handleSubmit}>
+            <Link to="/four">NEXT</Link>
             </button>
         </>
     )
