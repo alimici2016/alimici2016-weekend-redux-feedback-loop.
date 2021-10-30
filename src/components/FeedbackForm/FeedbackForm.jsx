@@ -6,7 +6,6 @@ function FeedbackForm () {
     // const renderQuestion = () => {
     // }
 
-
     const dispatch = useDispatch();
 
     const [input, setInput] = useState('')
@@ -42,7 +41,7 @@ function FeedbackForm () {
         <form onSubmit={(event) => addInput(event)}>
         <input onChange={handleInputChange}
         type="text"
-        value={input}
+        // value=""
         placeholder="answer"
         />
         

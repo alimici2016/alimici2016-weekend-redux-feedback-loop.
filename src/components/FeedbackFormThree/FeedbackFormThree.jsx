@@ -32,7 +32,7 @@ function FeedbackFormThree () {
         <form onSubmit={(event) => addInput(event)}>
         <input onChange={handleInputChange}
         type="text"
-        value={input}
+        // value={input}
         placeholder="answer"
         />
         </form>

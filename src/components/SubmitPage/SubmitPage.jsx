@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import axios from 'axios'
-import { useRouteMatch } from "react-router";
 function SubmitPage() {
 
     const feeling = useSelector((store) => store.answerReducer)
@@ -8,15 +7,35 @@ function SubmitPage() {
     const support = useSelector((store) => store.answerThreeReducer)
     const comments = useSelector((store) => store.answerFourReducer)
 
+    // const answerArray = [feeling, understanding, support, comments]
 
+
+    const handleSubmit = () => {
+        console.log('clicked')
+        axios({
+            method: 'POST',
+            url: '/', 
+            data: feeling
+        }).then ((response) => {
+            console.log('response from POST', response)
+        }).catch((err) => {
+            console.log('error in POST', err)
+        })
+    };
+
+
+
+    console.log(feeling.data);
     return(
         <>
         <p>{feeling}</p>
-        <p>{understanding}</p>
-        <p>{support}</p>
-        <p>{comments}</p>
+        {/* <p>{answerArray.understanding}</p>
+        <p>{answerArray.support}</p>
+        <p>{answerArray.comments}</p> */}
+        <button onClick={handleSubmit}> Submit</button>
         </>
     )
-    
 
-}
+};
+
+export default SubmitPage;

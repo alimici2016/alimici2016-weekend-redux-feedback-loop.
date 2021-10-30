@@ -6,6 +6,7 @@ import Header from '../Header/Header';
 import { Route, HashRouter as Router, Link} from 'react-router-dom';
 import FeedbackFormThree from '../FeedbackFormThree/FeedbackFormThree';
 import FeedbackFormFour from '../FeedbackFormFour/FeedbackFormFour';
+import SubmitPage from '../SubmitPage/SubmitPage';
 
 
 function App() {
@@ -47,8 +48,16 @@ function App() {
 
         <Route path='/four'>
           <FeedbackFormFour />
+          <nav>
+            <button>
+              <Link to="/submit">NEXT</Link>
+            </button>
+          </nav>
 
-        </Route>
+         </Route>
+        <Route path='/submit'>
+        <SubmitPage />
+        </Route> 
 
       </Router>
     </div>
