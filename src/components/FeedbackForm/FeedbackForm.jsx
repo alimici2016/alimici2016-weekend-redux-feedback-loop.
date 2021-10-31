@@ -11,11 +11,6 @@ function FeedbackForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // console.log('clicked')
-        // setInput({
-        //     ...input,
-        //     answer: event.target.value,
-        // })
 
         dispatch({
            type: "ANSWER_ONE",

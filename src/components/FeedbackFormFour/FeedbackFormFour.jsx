@@ -8,14 +8,6 @@ function FeedbackFormFour() {
 
     const [input, setInput] = useState('')
 
-    // const handleInputChange = (event) => {
-    //     // console.log('clicked')
-    //     setInput({
-    //         ...input,
-    //         answer: event.target.value,
-    //     })
-    // }
-
     const handleSubmit = (event) => {
         event.preventDefault();
 

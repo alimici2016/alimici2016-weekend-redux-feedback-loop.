@@ -7,6 +7,7 @@ import { Route, HashRouter as Router, Link} from 'react-router-dom';
 import FeedbackFormThree from '../FeedbackFormThree/FeedbackFormThree';
 import FeedbackFormFour from '../FeedbackFormFour/FeedbackFormFour';
 import SubmitPage from '../SubmitPage/SubmitPage';
+import ThankYouPage from '../ThankYou/ThankYouPage';
 
 
 function App() {
@@ -38,6 +39,10 @@ function App() {
          <Route path='/submit'>
         <SubmitPage />
         </Route> 
+
+        <Route path='/thank'>
+        <ThankYouPage />
+        </Route>
         
       </Router>
       
