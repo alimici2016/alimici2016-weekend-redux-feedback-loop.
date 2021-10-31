@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
-import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from "redux";
+import registerServiceWorker from './registerServiceWorker';
 import logger from 'redux-logger';
 
 let feedbackObject = {
@@ -27,7 +27,8 @@ const feedbackReducer = (state = feedbackObject, action) => {
         default:
             return state
     }
-};//should set this object "feedbackReducer to my inputs"
+};
+//should set this object "feedbackReducer to my inputs"
 
 
 // const feedbackReducer = (state = feedbackObject, action) => {

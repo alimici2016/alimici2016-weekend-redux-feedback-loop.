@@ -42,19 +42,17 @@ function FeedbackForm() {
                         <TextField onChange={(event) => setInput(event.target.value)}
                             size="small"
                             id="filled-size-small"
-                            defaultValue="Small"
                             variant="filled"
                             type="number"
                             value={input}
                             placeholder="answer"
-                            min="1" max="10"
                         />
                     </form>
                     
                     <Button
                         variant="outlined"
-                        disabled={input.length < 1}
-                        onClick={handleSubmit}>Next
+                        disabled={parseInt(input) < 1 || parseInt(input) > 5 || input == ''}
+                        onClick={handleSubmit}>Next 
                     </Button>
                 </Paper>
             </Container>

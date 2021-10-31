@@ -13,6 +13,12 @@ function FeedbackFormTwo() {
 
     const [input, setInput] = useState('')
 
+    const handleNumber = () => {
+        if(input >= 1 && input <= 5){
+            
+        }
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
         dispatch({
@@ -38,7 +44,6 @@ function FeedbackFormTwo() {
                         <TextField onChange={(event) => setInput(event.target.value)}
                             size="small"
                             id="filled-size-small"
-                            defaultValue="Small"
                             variant="filled"
                             type="text"
                             value={input}
@@ -51,9 +56,8 @@ function FeedbackFormTwo() {
 
                     <Button
                         variant="outlined"
-                        disabled={input.length < 1}
+                        disabled={parseInt(input) < 1 || parseInt(input) > 5 || input == ''}
                         onClick={handleSubmit}>Next
-
                     </Button>
                 </Paper>
             </Container>

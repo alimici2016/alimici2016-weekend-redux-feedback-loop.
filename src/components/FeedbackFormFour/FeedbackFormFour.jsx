@@ -44,10 +44,11 @@ function FeedbackFormFour() {
                         />
                     </form>
                     <Button
-                    onClick={handleBack}>Back  
+                        onClick={handleBack}>Back
                     </Button>
 
                     <Button
+                       disabled={parseInt(input) < 1 || parseInt(input) > 5 || input == ''}
                         variant="outlined"
                         onClick={handleSubmit}>Next
                     </Button>

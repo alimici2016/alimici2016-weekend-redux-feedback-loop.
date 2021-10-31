@@ -48,7 +48,7 @@ function FeedbackFormThree() {
 
                     <Button
                         variant="outlined"
-                        disabled={input.length < 1}
+                        disabled={parseInt(input) < 1 || parseInt(input) > 5 || input == ''}
                         onClick={handleSubmit}>Next
                     </Button>
                 </Paper>
