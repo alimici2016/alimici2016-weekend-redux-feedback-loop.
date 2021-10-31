@@ -3,7 +3,7 @@ import { Provider, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
-import { Container, TextField } from "@mui/material";
+import { Container, TextField, createTheme } from "@mui/material";
 
 
 function FeedbackForm() {
@@ -25,6 +25,7 @@ function FeedbackForm() {
         setInput('')
         history.push('/two')
     };
+
     //This handleSubmit function should be set to default if no event happens
     //Then dispatch to the reducer occurs sending the input as the payload
 
@@ -43,19 +44,20 @@ function FeedbackForm() {
                             id="filled-size-small"
                             defaultValue="Small"
                             variant="filled"
-                            type="text"
+                            type="number"
                             value={input}
                             placeholder="answer"
+                            min="1" max="10"
                         />
-                </form>
-                
-                <Button
-                    variant="outlined"
-                    disabled={input.length < 1}
-                    onClick={handleSubmit}>Next
-                </Button>
-            </Paper>
-        </Container>
+                    </form>
+
+                    <Button
+                        variant="outlined"
+                        disabled={input.length < 1}
+                        onClick={handleSubmit}>Next
+                    </Button>
+                </Paper>
+            </Container>
         </>
     )
 };

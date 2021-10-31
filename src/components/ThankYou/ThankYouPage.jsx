@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom"
 import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
-import { Container } from "@mui/material";
+import { Container, Alert } from "@mui/material";
 
 function ThankYouPage() {
 
@@ -9,6 +9,7 @@ function ThankYouPage() {
 
     const newForm = () => {
         history.push('/');
+       
     }
 
     return (
@@ -16,6 +17,7 @@ function ThankYouPage() {
             <Container>
                 <Paper>
                     <h1>Thank you for filling out the feedback!</h1>
+                    
                     <Button
                         variant="outlined"
                         color="success"

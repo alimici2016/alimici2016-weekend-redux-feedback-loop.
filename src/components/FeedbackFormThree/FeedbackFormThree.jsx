@@ -23,6 +23,9 @@ function FeedbackFormThree() {
         setInput('')
         history.push('/four')
     };
+    const handleBack = () => {
+        history.push('/two')
+    };
 
     return (
         <>
@@ -39,6 +42,10 @@ function FeedbackFormThree() {
                             placeholder="answer"
                         />
                     </form>
+                    <Button
+                    onClick={handleBack}>Back  
+                    </Button>
+
                     <Button
                         variant="outlined"
                         disabled={input.length < 1}

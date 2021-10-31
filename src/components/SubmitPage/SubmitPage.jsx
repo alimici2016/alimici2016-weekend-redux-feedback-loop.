@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
-import { Container } from "@mui/material";
+import { Container, Alert } from "@mui/material";
 
 function SubmitPage() {
 
@@ -32,6 +32,7 @@ function SubmitPage() {
             console.log('error in POST', err)
         })
         history.push('/thank')
+
     };
 
 
@@ -40,17 +41,21 @@ function SubmitPage() {
         <>
             <Container>
                 <Paper>
-                    
-                    <h2>Review Your Feedback</h2>
+                    <Alert severity="success">Review Your Feedback</Alert>
                     <h5>Feeling: {feedback.feeling}</h5>
                     <h5>Understanding: {feedback.understanding}</h5>
                     <h5>Support: {feedback.support}</h5>
                     <h5>Comments: {feedback.comments}</h5>
-                   
+                    
+                    <Button
+                    onClick={handleBack}>Back  
+                    </Button>
+
                     <Button
                         size="small"
                         variant="outlined"
                         onClick={handleSubmit}>Next
+
                     </Button>
                 </Paper>
             </Container>

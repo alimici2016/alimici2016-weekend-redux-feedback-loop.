@@ -24,6 +24,9 @@ function FeedbackFormTwo() {
 
         history.push('/three')
     };
+    const handleBack = () => {
+        history.push('/')
+    }
     return (
 
         <>
@@ -42,6 +45,9 @@ function FeedbackFormTwo() {
                             placeholder="answer"
                         />
                     </form>
+                    <Button
+                    onClick={handleBack}>Back  
+                    </Button>
 
                     <Button
                         variant="outlined"

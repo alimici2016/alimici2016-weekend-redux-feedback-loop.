@@ -25,6 +25,9 @@ function FeedbackFormFour() {
         setInput('')
         history.push('/submit')
     };
+    const handleBack = () => {
+        history.push('/three')
+    };
 
     return (
         <>
@@ -42,8 +45,11 @@ function FeedbackFormFour() {
                         />
                     </form>
                     <Button
+                    onClick={handleBack}>Back  
+                    </Button>
+
+                    <Button
                         variant="outlined"
-                        disabled={input.length < 1}
                         onClick={handleSubmit}>Next
                     </Button>
                 </Paper>
