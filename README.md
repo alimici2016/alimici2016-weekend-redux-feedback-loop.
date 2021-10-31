@@ -2,11 +2,11 @@
 Redux-Feedback-loop
 
 ## Installation
-Fork Clone
-npm install the dependencies
-create a database "prime_feedback"
-npm run server
-npm run client
+1-Fork Clone
+2-Npm install the dependencies
+3-Create a database "prime_feedback"
+4-Npm run server
+5-npm run client
 
 ## Pre-requisites
 Node.js
