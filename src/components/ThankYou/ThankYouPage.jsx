@@ -16,8 +16,7 @@ function ThankYouPage() {
         <>
             <Container>
                 <Paper>
-                    <h1>Thank you for filling out the feedback!</h1>
-                    
+                <Alert severity="success">Thank you for filling out the feedback!</Alert>
                     <Button
                         variant="outlined"
                         color="success"

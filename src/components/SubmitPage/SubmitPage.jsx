@@ -35,26 +35,21 @@ function SubmitPage() {
 
     };
 
-
     // console.log(feedback.feeling);
     return (
         <>
             <Container>
                 <Paper>
-                    <Alert severity="success">Review Your Feedback</Alert>
+                    <h1>Review Your Feedback</h1>
                     <h5>Feeling: {feedback.feeling}</h5>
                     <h5>Understanding: {feedback.understanding}</h5>
                     <h5>Support: {feedback.support}</h5>
                     <h5>Comments: {feedback.comments}</h5>
-                    
-                    <Button
-                    onClick={handleBack}>Back  
-                    </Button>
 
                     <Button
                         size="small"
                         variant="outlined"
-                        onClick={handleSubmit}>Next
+                        onClick={handleSubmit}>Submit
 
                     </Button>
                 </Paper>
