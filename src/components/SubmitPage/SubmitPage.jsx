@@ -34,8 +34,9 @@ function SubmitPage() {
         history.push('/thank')
 
     };
-
-    // console.log(feedback.feeling);
+    //End Post route, sends data to the database
+    
+    //Below renders the inputs
     return (
         <>
             <Container>

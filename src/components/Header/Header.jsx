@@ -1,4 +1,3 @@
-
 function Header() {
     return (
         <>
@@ -10,4 +9,5 @@ function Header() {
         </>
     )
 };
+//Header displays through the survey
 export default Header;

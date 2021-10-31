@@ -10,6 +10,7 @@ import SubmitPage from '../SubmitPage/SubmitPage';
 import ThankYouPage from '../ThankYou/ThankYouPage';
 import Admin from '../Admin/Admin'
 
+//This is the root component that is connecting and routing the different pages
 function App() {
  
   return (

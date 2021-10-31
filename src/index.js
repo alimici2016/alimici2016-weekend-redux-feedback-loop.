@@ -30,21 +30,6 @@ const feedbackReducer = (state = feedbackObject, action) => {
 };
 //should set this object "feedbackReducer to my inputs"
 
-
-// const feedbackReducer = (state = feedbackObject, action) => {
-//     if (action.type === "ANSWER_ONE") {
-//         return { ...state, feeling: action.payload }
-//     } else if (action.type === "ANSWER_TWO") {
-//         return { ...state, understanding: action.payload }
-//     } else if (action.type === "ANSWER_THREE") {
-//         return { ...state, support: action.payload }
-//     } else if (action.type === "ANSWER_FOUR") {
-//         return { ...state, comments: action.payload }
-//     }
-
-//     return state;
-// };
-
 const storeInstance = createStore(
     combineReducers({
         feedbackReducer
@@ -55,7 +40,7 @@ const storeInstance = createStore(
     }),
     applyMiddleware(logger)
 );
-
+//combines the reducer into one store
 
 ReactDOM.render(
     <Provider store={storeInstance}>

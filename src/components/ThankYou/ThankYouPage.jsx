@@ -8,9 +8,9 @@ function ThankYouPage() {
     const history = useHistory();
 
     const newForm = () => {
-        history.push('/');
-       
-    }
+        history.push('/'); 
+    };
+// This is function that uses history to push us to different pages
 
     return (
         <>

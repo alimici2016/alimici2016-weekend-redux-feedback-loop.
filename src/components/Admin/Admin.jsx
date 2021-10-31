@@ -25,8 +25,10 @@ function Admin() {
             console.log(err)
         })
     };
+    //End Get route
 
     const deleteData = (id) => {
+        confirm('Do you want to delete?')
     //    console.log(id)
         axios({
             method: 'DELETE',
@@ -37,13 +39,18 @@ function Admin() {
         }).catch((err) =>{
             console.log('err in DELETE', err)
         })
+
     };
+    //Delete route which is taking id in as a parameter
+
+    const alertDelete = () => {
+        alert('are you sure you want to delete')
+    }
 
     useEffect(() => {
         fetchData();
-    }, [])
-
-    // console.log(data)
+    }, []);
+    // rendering the data
 
     return (
         <>
@@ -66,7 +73,7 @@ function Admin() {
                                 <TableCell>{data.understanding}</TableCell>
                                 <TableCell>{data.support}</TableCell>
                                 <TableCell>{data.comments}</TableCell>
-                                <TableCell><Button onClick={() => deleteData(data.id)}>Delete</Button></TableCell>
+                                <TableCell><Button onClick={ () => deleteData(data.id)}>Delete</Button></TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

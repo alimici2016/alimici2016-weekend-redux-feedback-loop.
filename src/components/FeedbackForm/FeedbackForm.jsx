@@ -33,6 +33,7 @@ function FeedbackForm() {
     //Then said input is the value which is sent to the above dispatch
     //Button when click will fire off this entire thing as well as sending us to the next page
 
+    //Also made several conditions to make sure people could only use the button if the number is 1-5
     return (
         <>
             <Container>
