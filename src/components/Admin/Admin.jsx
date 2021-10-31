@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Button from "@restart/ui/esm/Button";
 
 function Admin() {
 
@@ -26,11 +27,23 @@ function Admin() {
     };
 
 
+    const deleteData = () => {
+       
+        axios({
+            method: 'DELETE',
+            url: `/feedback/${data.id}`
+        }).then((response) => {
+            console.log(response)
+        }).catch((err) =>{
+            console.log('err in DELETE', err)
+        })
+    };
+
     useEffect(() => {
         fetchData();
     }, [])
 
-    console.log(data)?
+    // console.log(data)
 
     return (
         <>
@@ -43,17 +56,17 @@ function Admin() {
                             <TableCell>Understanding:</TableCell>
                             <TableCell>Support:</TableCell>
                             <TableCell>Comments:</TableCell>
-
                         </TableRow>
                     </TableHead>
 
                     <TableBody>
                         {data.map((data) => (
-                            <TableRow>
+                            <TableRow key={data.id}>
                                 <TableCell>{data.feeling}</TableCell>
                                 <TableCell>{data.understanding}</TableCell>
                                 <TableCell>{data.support}</TableCell>
                                 <TableCell>{data.comments}</TableCell>
+                                <TableCell><Button onClick={deleteData}>Delete</Button></TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
