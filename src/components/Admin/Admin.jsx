@@ -26,13 +26,13 @@ function Admin() {
         })
     };
 
-
-    const deleteData = () => {
-       
+    const deleteData = (id) => {
+    //    console.log(id)
         axios({
             method: 'DELETE',
-            url: `/feedback/${data.id}`
+            url: `/feedback/${id}`
         }).then((response) => {
+            fetchData();
             console.log(response)
         }).catch((err) =>{
             console.log('err in DELETE', err)
@@ -66,7 +66,7 @@ function Admin() {
                                 <TableCell>{data.understanding}</TableCell>
                                 <TableCell>{data.support}</TableCell>
                                 <TableCell>{data.comments}</TableCell>
-                                <TableCell><Button onClick={deleteData}>Delete</Button></TableCell>
+                                <TableCell><Button onClick={() => deleteData(data.id)}>Delete</Button></TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
