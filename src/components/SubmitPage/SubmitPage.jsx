@@ -1,7 +1,11 @@
 import { useSelector } from "react-redux";
 import axios from 'axios'
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button'
+import Paper from '@mui/material/Paper'
+import { Container } from "@mui/material";
+
 function SubmitPage() {
 
     // const feeling = useSelector((store) => store.answerReducer)
@@ -27,21 +31,29 @@ function SubmitPage() {
         }).catch((err) => {
             console.log('error in POST', err)
         })
+        history.push('/thank')
     };
 
 
     // console.log(feedback.feeling);
     return (
         <>
-            <h2>Review Your Feedback</h2>
-            <h5>Feeling: {feedback.feeling}</h5>
-            <h5>Understanding: {feedback.understanding}</h5>
-            <h5>Support: {feedback.support}</h5>
-            <h5>Comments: {feedback.comments}</h5>
-            <button 
-            onClick={handleSubmit}> 
-            <Link to="/thank">SUBMIT</Link>
-            </button>
+            <Container>
+                <Paper>
+                    
+                    <h2>Review Your Feedback</h2>
+                    <h5>Feeling: {feedback.feeling}</h5>
+                    <h5>Understanding: {feedback.understanding}</h5>
+                    <h5>Support: {feedback.support}</h5>
+                    <h5>Comments: {feedback.comments}</h5>
+                   
+                    <Button
+                        size="small"
+                        variant="outlined"
+                        onClick={handleSubmit}>Next
+                    </Button>
+                </Paper>
+            </Container>
         </>
     )
 };

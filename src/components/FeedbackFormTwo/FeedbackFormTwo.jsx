@@ -1,14 +1,19 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import Button from '@mui/material/Button'
+import Paper from '@mui/material/Paper'
+import { Container, TextField } from "@mui/material";
 
 function FeedbackFormTwo() {
+
+    const history = useHistory();
 
     const dispatch = useDispatch();
 
     const [input, setInput] = useState('')
 
-    const handleSubmit= (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
         dispatch({
             type: "ANSWER_TWO",
@@ -16,21 +21,36 @@ function FeedbackFormTwo() {
         })
 
         setInput('')
+
+        history.push('/three')
     };
     return (
-        <>
-            <h1>How well are you understanding the content?</h1>
 
-            <form>
-                <input onChange={(event) => setInput(event.target.value)}
-                    type="text"
-                    value={input}
-                    placeholder="answer"
-                />
-            </form>
-            <button onClick={handleSubmit}>
-            <Link to="/three">NEXT</Link>
-            </button>
+        <>
+            <Container>
+                <Paper>
+                    <h1>How well are you understanding the content?</h1>
+
+                    <form>
+                        <TextField onChange={(event) => setInput(event.target.value)}
+                            size="small"
+                            id="filled-size-small"
+                            defaultValue="Small"
+                            variant="filled"
+                            type="text"
+                            value={input}
+                            placeholder="answer"
+                        />
+                    </form>
+
+                    <Button
+                        variant="outlined"
+                        disabled={input.length < 1}
+                        onClick={handleSubmit}>Next
+
+                    </Button>
+                </Paper>
+            </Container>
         </>
     )
 };

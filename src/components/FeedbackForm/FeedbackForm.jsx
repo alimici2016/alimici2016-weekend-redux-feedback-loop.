@@ -1,9 +1,14 @@
 import { useState, } from 'react'
-import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom';
+import { Provider, useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom';
+import Button from '@mui/material/Button'
+import Paper from '@mui/material/Paper'
+import { Container, TextField } from "@mui/material";
 
 
 function FeedbackForm() {
+
+    const history = useHistory();
 
     const dispatch = useDispatch();
 
@@ -13,11 +18,12 @@ function FeedbackForm() {
         event.preventDefault();
 
         dispatch({
-           type: "ANSWER_ONE",
+            type: "ANSWER_ONE",
             payload: input
         })
 
         setInput('')
+        history.push('/two')
     };
     //This handleSubmit function should be set to default if no event happens
     //Then dispatch to the reducer occurs sending the input as the payload
@@ -28,17 +34,28 @@ function FeedbackForm() {
 
     return (
         <>
-            <h1>How are you feeling today?</h1>
-            <form>
-                <input onChange={(event) => setInput(event.target.value)}
-                    type="text"
-                    value={input}
-                    placeholder="answer"
-                />
-            </form>
-            <button onClick={handleSubmit}>
-              <Link to="/two">NEXT</Link>
-            </button>
+            <Container>
+                <Paper>
+                    <h1>How are you feeling today?</h1>
+                    <form>
+                        <TextField onChange={(event) => setInput(event.target.value)}
+                            size="small"
+                            id="filled-size-small"
+                            defaultValue="Small"
+                            variant="filled"
+                            type="text"
+                            value={input}
+                            placeholder="answer"
+                        />
+                </form>
+                
+                <Button
+                    variant="outlined"
+                    disabled={input.length < 1}
+                    onClick={handleSubmit}>Next
+                </Button>
+            </Paper>
+        </Container>
         </>
     )
 };

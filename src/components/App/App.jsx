@@ -3,7 +3,7 @@ import './App.css';
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
 import FeedbackFormTwo from '../FeedbackFormTwo/FeedbackFormTwo';
 import Header from '../Header/Header';
-import { Route, HashRouter as Router, Link} from 'react-router-dom';
+import { Route, HashRouter as Router, Link } from 'react-router-dom';
 import FeedbackFormThree from '../FeedbackFormThree/FeedbackFormThree';
 import FeedbackFormFour from '../FeedbackFormFour/FeedbackFormFour';
 import SubmitPage from '../SubmitPage/SubmitPage';
@@ -35,17 +35,17 @@ function App() {
         <Route path='/four'>
           <FeedbackFormFour />
 
-         </Route>
-         <Route path='/submit'>
-        <SubmitPage />
-        </Route> 
+        </Route>
+        <Route path='/submit'>
+          <SubmitPage />
+        </Route>
 
         <Route path='/thank'>
-        <ThankYouPage />
+          <ThankYouPage />
         </Route>
-        
+
       </Router>
-      
+
 
     </div>
   );

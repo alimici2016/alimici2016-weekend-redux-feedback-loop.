@@ -1,8 +1,14 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import Button from '@mui/material/Button'
+import Paper from '@mui/material/Paper'
+import { Container, TextField } from "@mui/material";
+
 
 function FeedbackFormFour() {
+
+    const history = useHistory();
 
     const dispatch = useDispatch();
 
@@ -17,22 +23,31 @@ function FeedbackFormFour() {
         })
 
         setInput('')
+        history.push('/submit')
     };
 
     return (
         <>
-            <h1>Any comments you want to leave?</h1>
-
-            <form>
-                <input onChange={(event) => setInput(event.target.value)}
-                    type="text"
-                    value={input}
-                    placeholder="answer"
-                />
-            </form>
-            <button onClick={handleSubmit}>
-            <Link to="/submit">NEXT</Link>
-            </button>
+            <Container>
+                <Paper>
+                    <h1>Any comments you want to leave?</h1>
+                    <form>
+                        <TextField onChange={(event) => setInput(event.target.value)}
+                            size="small"
+                            id="filled-size-small"
+                            variant="filled"
+                            type="text"
+                            value={input}
+                            placeholder="answer"
+                        />
+                    </form>
+                    <Button
+                        variant="outlined"
+                        disabled={input.length < 1}
+                        onClick={handleSubmit}>Next
+                    </Button>
+                </Paper>
+            </Container>
         </>
     )
 }

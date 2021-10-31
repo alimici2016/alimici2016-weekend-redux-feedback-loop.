@@ -1,9 +1,13 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import Button from '@mui/material/Button'
+import Paper from '@mui/material/Paper'
+import { Container, TextField } from "@mui/material";
 
 function FeedbackFormThree() {
 
+    const history = useHistory();
     const dispatch = useDispatch();
 
     const [input, setInput] = useState('')
@@ -12,27 +16,36 @@ function FeedbackFormThree() {
         event.preventDefault();
 
         dispatch({
-           type: "ANSWER_THREE",
+            type: "ANSWER_THREE",
             payload: input
         })
 
         setInput('')
+        history.push('/four')
     };
 
     return (
         <>
-            <h1>How well are you being supported?</h1>
-
-            <form>
-                <input onChange={(event) => setInput(event.target.value)}
-                    type="text"
-                    value={input}
-                    placeholder="answer"
-                />
-            </form>
-            <button onClick={handleSubmit}>
-            <Link to="/four">NEXT</Link>
-            </button>
+            <Container>
+                <Paper>
+                    <h1>How well are you being supported?</h1>
+                    <form>
+                        <TextField onChange={(event) => setInput(event.target.value)}
+                            size="small"
+                            id="filled-size-small"
+                            variant="filled"
+                            type="text"
+                            value={input}
+                            placeholder="answer"
+                        />
+                    </form>
+                    <Button
+                        variant="outlined"
+                        disabled={input.length < 1}
+                        onClick={handleSubmit}>Next
+                    </Button>
+                </Paper>
+            </Container>
         </>
     )
 };
