@@ -1,12 +1,5 @@
 # Project Name 
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
-
-## Description
-
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Redux-Feedback-loop
 
 ## Installation
 Fork Clone
@@ -21,10 +14,13 @@ Postgresql
 Postico
 
 ## Usage
-connect to localhost 3000
-Answer a series of feedback questions
-If user wants to go back can edit previous answers
-Admin page allows user to delete previous submissions
+1-Connect to localhost 3000
+
+2-Answer a series of feedback questions
+
+3-If user wants to go back can edit previous answers
+
+4-Admin page allows user to delete previous submissions
 
 ## Built With
 HTML
