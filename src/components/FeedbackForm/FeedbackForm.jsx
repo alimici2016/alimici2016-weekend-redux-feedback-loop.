@@ -1,10 +1,9 @@
 import { useState, } from 'react'
-import { Provider, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
-import { Container, TextField, createTheme } from "@mui/material";
-
+import { Container, TextField } from "@mui/material";
 
 function FeedbackForm() {
 

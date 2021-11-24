@@ -8,8 +8,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from "@restart/ui/esm/Button";
+import { useHistory } from "react-router-dom";
 
 function Admin() {
+    const history = useHistory();
 
     const [data, setData] = useState([])
 
@@ -28,24 +30,23 @@ function Admin() {
     //End Get route
 
     const deleteData = (id) => {
-        confirm('Do you want to delete?')
-    //    console.log(id)
-        axios({
-            method: 'DELETE',
-            url: `/feedback/${id}`
-        }).then((response) => {
-            fetchData();
-            console.log(response)
-        }).catch((err) =>{
-            console.log('err in DELETE', err)
-        })
 
-    };
-    //Delete route which is taking id in as a parameter
+        if (confirm('Do you want to delete?')) {
+            //    console.log(id)
+            axios({
+                method: 'DELETE',
+                url: `/feedback/${id}`
+            }).then((response) => {
+                fetchData();
+                console.log(response)
+            }).catch((err) => {
+                console.log('err in DELETE', err)
+            })
 
-    const alertDelete = () => {
-        alert('are you sure you want to delete')
+        } else {
+        }
     }
+    //Delete route which is taking id in as a parameter
 
     useEffect(() => {
         fetchData();
@@ -73,7 +74,7 @@ function Admin() {
                                 <TableCell>{data.understanding}</TableCell>
                                 <TableCell>{data.support}</TableCell>
                                 <TableCell>{data.comments}</TableCell>
-                                <TableCell><Button onClick={ () => deleteData(data.id)}>Delete</Button></TableCell>
+                                <TableCell><Button onClick={() => deleteData(data.id)}>Delete</Button></TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

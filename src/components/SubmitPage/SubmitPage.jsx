@@ -1,10 +1,9 @@
 import { useSelector } from "react-redux";
 import axios from 'axios'
 import { useHistory } from "react-router-dom";
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
-import { Container, Alert } from "@mui/material";
+import { Container  } from "@mui/material";
 
 function SubmitPage() {
 
