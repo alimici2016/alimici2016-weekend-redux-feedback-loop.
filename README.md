@@ -37,12 +37,13 @@ I have also made an admin page in which the admin can go through and delete cert
 ![Screenshot 18](screenshot18.png)
 
 ## Built With
-HTML
-CSS
-Javascript
-React
-Redux
-Material UI
+
+1. [Node.js](https://nodejs.org/en/)
+2. [Express](https://expressjs.com/)
+3. [React](https://reactjs.org/)
+4. [Redux](https://redux.js.org/)
+6. [PostgreSQL](https://www.postgresql.org/)
+7. [Material-UI](https://mui.com/)
 
 ## Acknowledge 
 Thanks to Prime Digital Academy who equipped and helped me to make this application a reality.
