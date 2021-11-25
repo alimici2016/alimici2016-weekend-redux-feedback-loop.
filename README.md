@@ -26,6 +26,16 @@ This is an application in which users are giving feedback based on some task tha
 
 I have also made an admin page in which the admin can go through and delete certain submission on a case by case circumstance. You would have to use '/admin' to check that out.
 
+## Screenshots
+
+![Screenshot 12](screenshot12.png)
+![Screenshot 13](screenshot13.png)
+![Screenshot 14](screenshot14.png)
+![Screenshot 15](screenshot15.png)
+![Screenshot 16](screenshot16.png)
+![Screenshot 17](screenshot17.png)
+![Screenshot 18](screenshot18.png)
+
 ## Built With
 HTML
 CSS
