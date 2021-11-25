@@ -17,9 +17,9 @@ Your localhost 3000 should opened in your primary browser, in which case you may
 Thank you!
 
 ## Pre-requisites
-Node.js
-Postgresql
-Postico
+[Node.js] (https://nodejs.org/en/)
+[PostgreSQL](https://www.postgresql.org/)
+[Postico] (https://https://eggerapps.at/postico/)
 
 ## Usage
 This is an application in which users are giving feedback based on some task that they've done. It asks them a series of question in which they have to give an answer in order to continue (except for the comment view). The application uses the global state to store each input and finally displays it on a submit page which ultimately sends the information to the database. 
