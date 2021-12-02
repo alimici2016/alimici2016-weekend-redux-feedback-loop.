@@ -7,11 +7,11 @@ This web application took about three days to complete
 The main concept this weekend's project was react-redux, learning about the global state was challenging, honestly understanding what state was challenging. However after completing this project I have a much better grasp of both of concepts and am glad for it!
 
 ## Installation
-1-Fork/Clone
-2-Create a database "prime_feedback"
-3-Npm install the dependencies
-4-Npm run server
-5-npm run client
+1. Fork/Clone
+2. Create a database "prime_feedback"
+3. Npm install the dependencies
+4. Npm run server
+5. npm run client
 
 Your localhost 3000 should opened in your primary browser, in which case you may take the questionnaire. 
 Thank you!
